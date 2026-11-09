@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171221">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>Moonlit Letters — A gentle story game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Moonlit Letters home"><span class="brand-mark">✦</span> MOONLIT <b>LETTERS</b></a>
+      <div class="chapter-label"><span class="live-dot"></span> A QUIET EVENING <span class="chapter-divider">/</span> CHAPTER 01</div>
+      <button class="icon-button" id="sound-toggle" type="button" aria-label="Toggle ambient sound" title="Toggle ambient sound">♫</button>
+    </header>
+
+    <section class="stage" aria-label="Bedroom scene">
+      <div class="scene-glow"></div>
+      <div class="moon moon-one"></div><div class="moon moon-two"></div>
+      <div class="window-frame"><div class="window-sky"><span class="star s1">✦</span><span class="star s2">·</span><span class="star s3">✧</span><span class="star s4">·</span><span class="star s5">✦</span><div class="window-moon"></div></div><div class="window-cross"></div></div>
+      <div class="curtain curtain-left"></div><div class="curtain curtain-right"></div>
+      <div class="plant"><i></i><i></i><i></i><i></i><i></i><span></span></div>
+      <div class="bedside"><div class="lamp"><i></i></div><div class="nightstand"><span class="drawer"></span><span class="drawer-handle"></span></div></div>
+      <div class="bed-back"></div>
+      <div class="pillow pillow-a"></div><div class="pillow pillow-b"></div>
+      <div class="bed"><div class="blanket"></div><div class="blanket-fold"></div></div>
+      <div class="character-wrap" id="character" aria-label="Mira, a 24-year-old adult woman, relaxing on her bed fully dressed">
+        <svg class="character-art" viewBox="0 0 640 460" role="img" aria-labelledby="art-title art-desc">
+          <title id="art-title">Mira relaxing on her bed</title><desc id="art-desc">A fully clothed adult anime woman with long dark hair and a soft lavender sweater, resting against pillows.</desc>
+          <defs>
+            <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#29253c"/><stop offset=".55" stop-color="#51405e"/><stop offset="1" stop-color="#29253b"/></linearGradient>
+            <linearGradient id="sweater" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c6a9dc"/><stop offset="1" stop-color="#886caa"/></linearGradient>
+            <linearGradient id="skin" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#ffe0d2"/><stop offset="1" stop-color="#e9b4a9"/></linearGradient>
+            <linearGradient id="skirt" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#756b8d"/><stop offset="1" stop-color="#4d4767"/></linearGradient>
+            <filter id="soft"><feGaussianBlur stdDeviation="8"/></filter>
+          </defs>
+          <ellipse cx="328" cy="411" rx="244" ry="20" fill="#211b32" opacity=".26" filter="url(#soft)"/>
+          <!-- legs, kept modestly covered -->
+          <path d="M408 312c55 10 119 40 158 78 13 13 4 31-15 32l-145-23-90-46z" fill="#f0c2b6"/>
+          <path d="M468 337c44 14 82 35 108 59 12 12 4 25-12 25l-100-14-55-41z" fill="#e9b9ae"/>
+          <path d="M255 327c61 9 115 24 164 49 19 10 17 30-7 32l-164-9-112-36z" fill="#f2c7ba"/>
+          <!-- hair behind -->
+          <path d="M185 174c-14-68 25-125 91-136 74-13 142 30 157 100 8 36 1 92-10 139l-42 65-171-8-43-70z" fill="url(#hair)"/>
+          <!-- body and skirt -->
+          <path d="M251 228c28-19 83-23 120-6 28 13 46 44 57 87l-21 73-206-6-4-76c8-34 25-58 54-72z" fill="url(#skirt)"/>
+          <path d="M213 235c21-26 57-40 101-38 43 2 76 17 91 45l17 108c-46 26-146 29-214 3l2-118z" fill="url(#sweater)"/>
+          <path d="M270 201c12 29 70 35 91 0l17 30c-28 37-99 39-126 1z" fill="#d5b9e7"/>
+          <!-- left sleeve and hand -->
+          <path d="M221 239c-22 8-34 28-45 60l-33 42c-8 12 5 24 17 16l44-28 40-57z" fill="url(#sweater)"/>
+          <path d="M149 331c-12 6-22 13-27 20-5 7 1 14 9 11l22-10c-7 9-7 14-1 16 6 1 17-11 24-19 7-8 15-17 18-25l-20-10z" fill="url(#skin)"/>
+          <!-- right sleeve / relaxed arm -->
+          <path d="M382 237c25 8 38 25 48 52l33 43c10 12-1 25-14 17l-46-27-43-53z" fill="url(#sweater)"/>
+          <path d="M459 327c12 6 21 15 26 23 4 8-2 14-10 10l-21-13c6 10 5 15-2 16-6 0-15-13-21-22-6-9-12-19-14-27l21-8z" fill="url(#skin)"/>
+          <!-- neck -->
+          <path d="M284 186v30c13 21 49 22 64-1l-4-46z" fill="url(#skin)"/>
+          <!-- face -->
+          <path d="M245 130c-1-45 24-78 70-79 47-1 76 30 74 78-1 43-25 79-66 83-45 4-77-34-78-82z" fill="url(#skin)"/>
+          <!-- ears -->
+          <ellipse cx="246" cy="145" rx="10" ry="17" fill="#efc0b3"/><ellipse cx="382" cy="143" rx="10" ry="17" fill="#efc0b3"/>
+          <!-- fringe -->
+          <path d="M237 140c-17-48 4-98 48-111 48-15 96 14 108 57 8 29 1 64-7 83l-12-35c-3-18-8-34-19-48-9 24-30 38-52 45 12-14 17-28 18-40-21 27-46 43-84 50l-1 43-12-44z" fill="url(#hair)"/>
+          <path d="M247 162c-5 44 5 74 26 91-25-3-50-26-52-54l-2-75zM376 157c8 34 1 64-20 87 28-10 43-31 42-58l-5-52z" fill="url(#hair)"/>
+          <!-- features -->
+          <path d="M275 145c9-8 22-8 30-1" fill="none" stroke="#554052" stroke-width="4" stroke-linecap="round"/><path d="M333 143c9-8 22-7 29 1" fill="none" stroke="#554052" stroke-width="4" stroke-linecap="round"/>
+          <ellipse cx="292" cy="157" rx="7" ry="9" fill="#73658a"/><ellipse cx="348" cy="156" rx="7" ry="9" fill="#73658a"/><circle cx="294" cy="154" r="2.5" fill="white"/><circle cx="350" cy="153" r="2.5" fill="white"/>
+          <path d="M319 161l-3 13 6 1" fill="none" stroke="#d49c96" stroke-width="2" stroke-linecap="round"/><path d="M307 183c8 7 20 7 28-1" fill="none" stroke="#b86e7c" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="273" cy="174" rx="12" ry="6" fill="#ed9e9e" opacity=".26"/><ellipse cx="363" cy="172" rx="12" ry="6" fill="#ed9e9e" opacity=".26"/>
+          <!-- cardigan details -->
+          <path d="M314 232l3 105M331 233l-1 106" stroke="#e3c9ed" stroke-width="3" opacity=".65"/><circle cx="326" cy="274" r="3" fill="#f6e2d0"/><circle cx="326" cy="300" r="3" fill="#f6e2d0"/>
+          <path d="M218 320c53 19 126 22 202 0" fill="none" stroke="#d9c0eb" stroke-width="3" opacity=".5"/>
+        </svg>
+      </div>
+      <div class="scene-caption"><span class="caption-star">✦</span> MIRA'S ROOM <span class="caption-line"></span> 11:42 PM</div>
+      <div class="floating-heart" id="heart-pop">♥</div>
+    </section>
+
+    <section class="conversation" aria-live="polite">
+      <div class="conversation-top">
+        <div class="speaker"><div class="avatar">M</div><div><div class="speaker-name">Mira <span class="age-tag">24</span></div><div class="speaker-mood" id="mood">a little sleepy, very glad you're here</div></div></div>
+        <div class="affection"><div class="affection-head"><span>YOUR CONNECTION</span><strong id="affection-value">0 <small>/ 6</small></strong></div><div class="meter"><div class="meter-fill" id="meter-fill"></div><span class="meter-glint"></span></div><div class="affection-note" id="affection-note">A lovely evening is just beginning</div></div>
+      </div>
+      <div class="dialogue-row"><div class="quote-mark">“</div><p class="dialogue" id="dialogue">I was hoping you'd stay a little longer. What would you like to talk about?</p></div>
+      <div class="choice-heading"><span>CHOOSE WHAT TO ASK</span><span class="soft-hint">Kindness goes a long way <span>↗</span></span></div>
+      <div class="choices" id="choices"></div>
+      <div class="footer-row"><span class="autosave"><span class="save-check">✓</span> Your story saves automatically</span><button class="restart" id="restart" type="button">START OVER <span>↻</span></button></div>
+    </section>
+    <footer class="site-note">A gentle story about listening, trust, and late-night conversations. <span>All characters are adults.</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="game.js"></script>
+</body>
+</html>
